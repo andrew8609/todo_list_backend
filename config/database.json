@@ -1,0 +1,26 @@
+{
+  "development": {
+    "username": "admin",
+    "password": "password",
+    "operatorsAliases": false,
+    "database": "progress_residential",
+    "host": "progress-regidential.cbcmzxuo48zt.us-east-1.rds.amazonaws.com",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "admin",
+    "password": "password",
+    "operatorsAliases": false,
+    "database": "progress_residential",
+    "host": "progress-regidential.cbcmzxuo48zt.us-east-1.rds.amazonaws.com",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "admin",
+    "password": "password",
+    "operatorsAliases": false,
+    "database": "progress_residential",
+    "host": "progress-regidential.cbcmzxuo48zt.us-east-1.rds.amazonaws.com",
+    "dialect": "mysql"
+  }
+}

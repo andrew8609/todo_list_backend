@@ -1,0 +1,33 @@
+{
+  "name": "progress_residential_assessment_project",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "start:dev": "nodemon --watch .env --watch app.js --watch bin ./bin/www --watch controllers --watch db --watch routes --watch core --watch config",
+    "db": "sequelize init",
+    "db:migrate": "sequelize db:migrate",
+    "test": "mocha"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.3",
+    "cors": "^2.8.4",
+    "debug": "~2.6.9",
+    "ejs": "^3.1.6",
+    "express": "~4.16.0",
+    "http-errors": "~1.6.2",
+    "jade": "~1.11.0",
+    "morgan": "~1.9.0",
+    "mysql2": "^1.5.3",
+    "node-input-validator": "^4.5.0",
+    "request-promise": "^4.2.6",
+    "sequelize": "^4.44.4",
+    "sequelize-hierarchy": "^2.0.4"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "chai-http": "^4.0.0",
+    "mocha": "^5.2.0",
+    "nodemon": "^1.17.5"
+  }
+}
