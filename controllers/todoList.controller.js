@@ -5,13 +5,15 @@ const TodoList = require('../db/models').TodoList;
 module.exports = {
 
     async getTodoListItems(req, res) {
-        if (req.params.listName == undefined || req.params.listName == "") {
+
+        var { listName } = req.query;
+        if (listName == undefined || listName == "") {
             res.status(422).json("list name should be provided.");
         }
         await TodoList
             .findOne({
                 where: {
-                    name: req.params.listName
+                    name: listName
                 },
                 include: [{
                     model: TodoItem,

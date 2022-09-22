@@ -8,7 +8,7 @@ module.exports = function (app) {
     next();
   });
 
-  app.get("/api/todoList/:listName", todoListController.getTodoListItems);
+  app.get("/api/todoList", todoListController.getTodoListItems);
   app.post("/api/todoList", todoListController.postTodoList);
 
 };
