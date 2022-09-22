@@ -16,14 +16,26 @@ module.exports = {
         if (!matched) {
             return res.status(422).json(v.errors);
         }
-        await TodoItem.create({
-            name: req.body.name,
-            details: req.body.details,
-            list_id: req.body.list_id,
-        });
-        return res.status(200).json("successfully created new todo item to the list.");
+
+        await TodoList.findOne({
+            where: {
+                id: req.body.list_id
+            }
+        })
+            .then(async row => {
+                if (!row) {
+                    return res.status(400).send("this list id does not exist.");
+                } else {
+                    await TodoItem.create({
+                        name: req.body.name,
+                        details: req.body.details,
+                        list_id: req.body.list_id,
+                    });
+                    return res.status(200).json("successfully added new todo item to the list.");
+                }
+            })
     },
-    
+
     async deleteTodoItem(req, res) {
 
         var { todoListName, todoItemName } = req.query;
